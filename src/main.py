@@ -54,8 +54,7 @@ def latest_versions(session):
         link = a_tag['href']
         re_text = re.search(pattern, a_tag.text)
         if re_text:
-            version = re_text.group('version')
-            status = re_text.group('status')
+            version, status = re_text.groups()
         else:
             version, status = a_tag.text, ''
         results.append((link, version, status))
