@@ -8,19 +8,22 @@
 
 ## Как пользоваться
 - Скачать проект:
-```
+```bash
 https://github.com/niktere12321/bs4_parser_pep.git
 ```
 - Перейти в директорию проекта:
-```
+```bash
 cd bs4_parser_pep
 ```
 - Создать виртуальное окружение:
-```
+```bash
 python -m venv venv
 ```
 - Установить зависимости:
+```bash
+python3 -m pip install --upgrade pip
 ```
+```bash
 pip install -r requirements.txt
 ```
 
@@ -55,3 +58,39 @@ download
 ```
 -o {pretty,file}, --output {pretty,file}
 ```
+
+## Примеры команд
+
+Получить ссылки на последние новости по всем версиям Python в терминале (с очисткой кеша):
+```bash
+python src/main.py whats-new -с
+```
+
+Получить ссылки на документацию всех версий Python в виде таблицы:
+```bash
+python src/main.py latest-versions -o pretty
+```
+
+Cкачать документацию по последней версии Python в формате PDF(A4):
+```bash
+python src/main.py download
+```
+
+Получить информацию по статусам и количеству PEP с записью в файл формата csv:
+```bash
+python src/main.py pep -o file
+```
+
+---
+## Техническая информация
+
+Стек технологий: Python, BeautifulSoup4
+
+При выводе информации в файл (-o file) он сохраняется в папке src/results/  
+Скачанная документация Python сохраняется в папке src/downloads/  
+Логи работы парсера расположены в папке src/logs/
+
+---
+## Об авторе
+
+Терезов Никита Алексеевич
